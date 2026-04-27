@@ -1,0 +1,29 @@
+{
+  "name": "Rustlings",
+  "image": "mcr.microsoft.com/devcontainers/rust:1-bookworm",
+
+  "features": {
+    "ghcr.io/guiyomh/features/just:0": {},
+    "ghcr.io/dhoeric/features/lazygit:1": {}
+  },
+
+  "postCreateCommand": "rustup install stable && rustup default stable && rustup component add clippy rustfmt rust-analyzer && cargo install --locked rustlings",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "vadimcn.vscode-lldb",
+        "skellock.just",
+        "usernamehw.errorlens"
+      ],
+      "settings": {
+        "rust-analyzer.check.command": "clippy",
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+
+  "remoteUser": "vscode"
+}
